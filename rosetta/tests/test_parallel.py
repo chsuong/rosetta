@@ -5,7 +5,7 @@ import pandas as pd
 from pandas.util.testing import assert_frame_equal, assert_series_equal
 import numpy as np
 import threading
-from StringIO import StringIO
+from io import StringIO
 
 from rosetta.parallel import parallel_easy, pandas_easy
 from rosetta.parallel.threading_easy import threading_easy, LockIterateApply

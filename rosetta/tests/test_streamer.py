@@ -1,7 +1,7 @@
 import os
 import unittest
 
-from StringIO import StringIO
+from io import StringIO
 from scipy import sparse
 
 from rosetta import TokenizerBasic
