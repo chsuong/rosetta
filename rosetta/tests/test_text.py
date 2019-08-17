@@ -430,8 +430,8 @@ class TestSFileFilter(unittest.TestCase):
         sff.token2id = {'a': 1, 'b': 2, 'c': 3, 'd': 1, 'e': 1}
         sff._resolve_collisions()
         # Check that the dicts are inverses of each other
-        token2id_rev = {v: k for k, v in sff.token2id.iteritems()}
-        for tok, id_val in sff.token2id.iteritems():
+        token2id_rev = {v: k for k, v in sff.token2id.items()}
+        for tok, id_val in sff.token2id.items():
             self.assertEqual(tok, token2id_rev[id_val])
 
     def check_keys(self, sff, benchmark_key_list):

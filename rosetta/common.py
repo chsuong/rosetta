@@ -211,7 +211,7 @@ class DocIDError(Exception):
 
 def printdict(d, max_print_len=None):
     s = ''
-    for key, value in d.iteritems():
+    for key, value in d.items():
         s += str(key) + ': ' + str(value) + '\n'
     if max_print_len:
         print(s[:max_print_len])

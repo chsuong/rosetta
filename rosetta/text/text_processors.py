@@ -227,7 +227,7 @@ class SparseFormatter(object):
     def _dict_to_tokens(self, record_dict):
         token_list = []
         if 'feature_values' in record_dict:
-            for feature, value in record_dict['feature_values'].iteritems():
+            for feature, value in record_dict['feature_values'].items():
                 # If the value is a non-integer score (e.g. tfidf), then
                 # it cannot correspond to a number of tokens
                 int_value = int(value)
@@ -359,7 +359,7 @@ class VWFormatter(SparseFormatter):
 
         # The feature part must start with a space unless there is a namespace.
         formatted += ' '
-        for word, count in feature_values.iteritems():
+        for word, count in feature_values.items():
             formatted += "%s:%s " % (word, count)
 
         # Remove the trailing space...not required but it's screwy to have a
@@ -449,7 +449,7 @@ class SVMLightFormatter(SparseFormatter):
         # For now, just use 0 for <target>
         formatted = str(target) + ' '
 
-        for word, count in feature_values.iteritems():
+        for word, count in feature_values.items():
             formatted += " %s:%s" % (word, count)
 
         return formatted
@@ -550,7 +550,7 @@ class SFileFilter(SaveLoad):
             for line in open_file:
                 num_docs += 1
                 record_dict = self.formatter.sstr_to_dict(line)
-                for token, value in record_dict['feature_values'].iteritems():
+                for token, value in record_dict['feature_values'].items():
                     hash_value = hash_fun(token)
                     token2id[token] = hash_value
                     token_score[token] += value
@@ -569,7 +569,7 @@ class SFileFilter(SaveLoad):
         """
         self._resolve_collisions(seed=seed)
 
-        self.id2token = {v: k for k, v in self.token2id.iteritems()}
+        self.id2token = {v: k for k, v in self.token2id.items()}
 
     def _resolve_collisions(self, seed=None):
         """
