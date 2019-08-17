@@ -95,7 +95,7 @@ def cut_file(infile, outfile, delimiter=',', keep_list=None, remove_list=None):
     writer = csv.writer(outfile, delimiter=delimiter)
 
     ## Extract the first row of the file
-    header = reader.next()
+    header = reader.__next__()
 
     ## Get and write the new header
     if keep_list:

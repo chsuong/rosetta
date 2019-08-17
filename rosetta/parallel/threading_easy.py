@@ -36,11 +36,11 @@ class LockIterateApply(threading.Thread):
 
     def read_apply(self):
         """
-        locks iterable.next() and applies self.transform
+        locks iterable.__next__() and applies self.transform
         """
         try:
             self.lock.acquire()
-            x = self.myiter.next()
+            x = self.myiter.__next__()
             self.lock.release()
         except StopIteration:
             self.lock.release()

@@ -15,7 +15,10 @@ import functools
 
 from collections import defaultdict
 
-
+try:
+    basestring
+except NameError:
+    basestring = str
 ###############################################################################
 # Decorators
 ###############################################################################

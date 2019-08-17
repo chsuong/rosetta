@@ -35,7 +35,7 @@ def parse_varinfo(varinfo_file):
         # For some reason, pandas is confused...so just split the lines
         # Create a dict {item1: [...], item2: [...],...} for each item in the
         # header
-        header = open_file.next().split()
+        header = open_file.__next__().split()
         rows = {col_name: [] for col_name in header}
         for line in open_file:
             for i, item in enumerate(line.split()):
