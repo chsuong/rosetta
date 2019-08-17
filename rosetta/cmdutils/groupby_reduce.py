@@ -145,7 +145,7 @@ class SmartStore(object):
         reductions : String or list of strings
             Reductions to use.  Determines data stored to some extent.
         """
-        if isinstance(reductions, basestring):
+        if isinstance(reductions, str):
             reductions = [reductions]
 
         self.reductions = reductions

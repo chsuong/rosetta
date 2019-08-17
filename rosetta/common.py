@@ -15,10 +15,6 @@ import functools
 
 from collections import defaultdict
 
-try:
-    basestring
-except NameError:
-    basestring = str
 ###############################################################################
 # Decorators
 ###############################################################################
@@ -58,7 +54,7 @@ class smart_open(object):
             First arg will be 'mode', e.g. 'r', 'rb', 'w'
             Second arg will be 'buffering', read the docs for open
         """
-        if isinstance(filename, basestring):
+        if isinstance(filename, str):
             self.fh = open(filename, *args)
             self.closing = True
         else:
@@ -264,7 +260,7 @@ def nested_keysearch(ndict, key_list):
         E.g. {'a': {'b': 2}}
     key_list : List of strings
     """
-    if isinstance(key_list, basestring):
+    if isinstance(key_list, str):
         key_list = [key_list]
 
     first_key = key_list[0]

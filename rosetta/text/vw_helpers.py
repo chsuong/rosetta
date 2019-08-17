@@ -441,13 +441,13 @@ class LDAResults(object):
         """
         df = df.copy()
 
-        if isinstance(rows, basestring):
+        if isinstance(rows, str):
             rows = [rows]
-        if isinstance(cols, basestring):
+        if isinstance(cols, str):
             cols = [cols]
-        if isinstance(c_rows, basestring):
+        if isinstance(c_rows, str):
             c_rows = [c_rows]
-        if isinstance(c_cols, basestring):
+        if isinstance(c_cols, str):
             c_cols = [c_cols]
 
         # Restrict using the conditionals
