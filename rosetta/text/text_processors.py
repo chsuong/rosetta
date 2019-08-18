@@ -557,7 +557,7 @@ class SFileFilter(SaveLoad):
                     doc_freq[token] += 1
                     idf[token] += 1
 
-        for token in idf.iterkeys():
+        for token in idf.keys():
             idf[token] = math.log(num_docs / idf[token])
 
         return token2id, token_score, doc_freq, num_docs, idf
