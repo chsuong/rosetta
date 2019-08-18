@@ -208,7 +208,7 @@ def _imap_easy(func, iterable, n_jobs, chunksize, ordered=True):
     n_jobs = _n_jobs_wrap(n_jobs)
 
     if n_jobs == 1:
-        results_iter = itertools.imap(func, iterable)
+        results_iter = list(map(func, iterable))
     else:
         _trypickle(func)
         pool = Pool(n_jobs)
@@ -225,7 +225,7 @@ def _imap_easy_pathos(func, iterable, n_jobs, chunksize, ordered=True):
     n_jobs = _n_jobs_wrap(n_jobs)
     from multiprocess import Pool as pPool
     if n_jobs == 1:
-        results_iter = itertools.imap(func, iterable)
+        results_iter = list(map(func, iterable))
     else:
         pool = pPool(n_jobs)
         if ordered:
