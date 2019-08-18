@@ -133,7 +133,7 @@ def _tokenize_one(tokenizer, formatter, doc_id_level, path):
     """
     # If path comes from find (and a pipe to stdin), there will be newlines.
     path = path.strip()
-    with open(path, 'r') as f:
+    with open(path, encoding="utf8", errors='ignore') as f:
             text = f.read()
 
     feature_values = tokenizer.text_to_counter(text)
