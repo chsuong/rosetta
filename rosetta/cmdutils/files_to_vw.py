@@ -133,7 +133,7 @@ def _tokenize_one(tokenizer, formatter, doc_id_level, path):
     """
     # If path comes from find (and a pipe to stdin), there will be newlines.
     path = path.strip()
-    if p.endswith('.txt'):
+    if path.endswith('.txt'): 
         with open(path, 'r') as f:
             text = f.read()
 
