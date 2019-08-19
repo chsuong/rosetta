@@ -626,7 +626,7 @@ class SFileFilter(SaveLoad):
         value will (probably) be altered.
         """
         # You can't compactify if self.bit_precision is too low
-        min_precision = int(np.ceil(np.log2(self.vocab_size)))
+        min_precision = np.ceil(np.log2(self.vocab_size))
 
         if self.bit_precision < min_precision:
             raise CollisionError(
