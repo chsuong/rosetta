@@ -654,7 +654,7 @@ class SFileFilter(SaveLoad):
         The idea is that only compactification can change this, so we only
         (automatically) call this after compactification.
         """
-        max_id = np.max(self.token2id.values())
+        max_id = np.max(numpy.array(list(self.token2id.values()), dtype))
 
         self.bit_precision_required = int(np.ceil(np.log2(max_id)))
 
